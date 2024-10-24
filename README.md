@@ -1,8 +1,31 @@
-# React + Vite
+# Learn React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is my repository for learning 'plek ketiplek' from the [VIP CODE STUDIO](https://youtube.com/playlist?list=PLmF_zPV9ZcP346sttD4Vs2VROLlIp5kPz&si=evPKF6a_rsJP-lTV) youtube channel.
 
-Currently, two official plugins are available:
+disclaimer: this is a repository of 'plek ketiplek' results so don't expect me to learn much. Maybe in the future there will be further projects related to react js, but maybe there is.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Playlist:
+ - Pengenalan React JS ✅
+ - Setup Project ✅
+ - Components and Props ✅
+ - Atomic Design ✅
+ - Implementation Atomic Design ✅
+ - React Router
+ - Conditional Rendering
+ - Nested Components
+ - Rendering Lists
+ - Event Handlers
+ - State
+ - useState
+ - Lifecycle
+ - useEffects
+ - useRef
+ - Get Data API
+ - Post Data API
+ - Custom Hooks
+ - Dynamic Routing
+ - Redux - State Management
+ - Redux Toolkit
+ - Implementation React Redux
+ - useContext
+ - useReducer
