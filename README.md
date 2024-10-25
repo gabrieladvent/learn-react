@@ -11,8 +11,8 @@ disclaimer: this is a repository of 'plek ketiplek' results so don't expect me t
  - Atomic Design ✅
  - Implementation Atomic Design ✅
  - React Router ✅
- - Conditional Rendering
- - Nested Components
+ - Conditional Rendering ✅
+ - Nested Components ✅
  - Rendering Lists
  - Event Handlers
  - State
