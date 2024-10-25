@@ -13,10 +13,10 @@ disclaimer: this is a repository of 'plek ketiplek' results so don't expect me t
  - React Router ✅
  - Conditional Rendering ✅
  - Nested Components ✅
- - Rendering Lists
- - Event Handlers
- - State
- - useState
+ - Rendering Lists ✅
+ - Event Handlers ✅
+ - State ✅
+ - useState ✅
  - Lifecycle
  - useEffects
  - useRef
