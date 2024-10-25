@@ -3,7 +3,6 @@ const Input = (props) => {
         classname = "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
         type = "text",
         name = "input",
-        id = "",
         placeholder = "Placeholder",
     } = props;
 
@@ -11,7 +10,7 @@ const Input = (props) => {
         <input
             type={type}
             name={name}
-            id={id}
+            id={name}
             placeholder={placeholder}
             className={classname}
         />

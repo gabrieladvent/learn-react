@@ -10,7 +10,7 @@ disclaimer: this is a repository of 'plek ketiplek' results so don't expect me t
  - Components and Props ✅
  - Atomic Design ✅
  - Implementation Atomic Design ✅
- - React Router
+ - React Router ✅
  - Conditional Rendering
  - Nested Components
  - Rendering Lists
