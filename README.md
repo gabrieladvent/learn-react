@@ -17,10 +17,10 @@ disclaimer: this is a repository of 'plek ketiplek' results so don't expect me t
  - Event Handlers ✅
  - State ✅
  - useState ✅
- - Lifecycle
- - useEffects
- - useRef
- - Get Data API
+ - Lifecycle ✅
+ - useEffects ✅ 
+ - useRef ✅
+ - Get Data API ✅
  - Post Data API
  - Custom Hooks
  - Dynamic Routing
