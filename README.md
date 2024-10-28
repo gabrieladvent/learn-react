@@ -21,8 +21,8 @@ disclaimer: this is a repository of 'plek ketiplek' results so don't expect me t
  - useEffects ✅ 
  - useRef ✅
  - Get Data API ✅
- - Post Data API
- - Custom Hooks
+ - Post Data API -
+ - Custom Hooks -
  - Dynamic Routing
  - Redux - State Management
  - Redux Toolkit

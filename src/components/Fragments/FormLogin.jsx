@@ -1,29 +1,46 @@
 import InputForm from "../Elements/Inputs/InputForm";
 import Button from "../Elements/Buton";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { login } from "../../services/auth.service";
 
 const FormLogin = () => {
+    const [loginFailed, setLoginFailed] = useState("");
+
     const handleLogin = (event) => {
         event.preventDefault();
-        localStorage.setItem("email", event.target.email.value);
-        localStorage.setItem("password", event.target.password.value);
 
-        window.location.href = "/products";
+        const data = {
+            username: event.target.username.value,
+            password: event.target.password.value,
+        }
+
+        login(data, (status, res) =>{
+            if (status) {
+                console.log("true", res);
+                localStorage.setItem("token", res);
+                window.location.href = "/products";
+
+            } else {
+                console.log("false", res.response.data);
+                setLoginFailed(res.response.data);
+            }
+        });
+
     };
 
-    const emailRef = useRef(null);
+    const usernameRef = useRef(null);
     useEffect(() => {
-        emailRef.current.focus();
+        usernameRef.current.focus();
     }, []);
 
     return (
         <form onSubmit={handleLogin}>
             <InputForm
-                title="Email"
-                type="email"
-                name="email"
-                placeholder="example@gmail.com"
-                ref={emailRef} // Ref dipasang di sini
+                title="Username"
+                type="text"
+                name="username"
+                placeholder="John Doe"
+                ref={usernameRef}
             />
 
             <InputForm
@@ -41,6 +58,11 @@ const FormLogin = () => {
                     Login
                 </Button>
             </div>
+            {
+                loginFailed && (
+                    <p className="text-red-500 rounded-md text-center text-lg mb-3">{loginFailed}</p>
+                )
+            }
         </form>
     );
 };

@@ -1,21 +1,18 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import CardProduct from "../components/Fragments/CardProducts";
 import Button from "../components/Elements/Buton";
-import Counter from "../components/Fragments/Counter";
-import getProducts from "../services/product.service";
-
-const email = localStorage.getItem("email");
+import {getProducts} from "../services/product.service";
+import { useLogin } from "../hooks/useLogin";
 
 const ProductPage = () => {
     const totalPriceRef = useRef(null);
     const [cart, setCart] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [products, setProducts] = useState([]);
+    const username = useLogin();
 
     const handleLogout = () => {
-        localStorage.removeItem("email");
-        localStorage.removeItem("password");
-
+        localStorage.removeItem("token");
         window.location.href = "/login";
     };
 
@@ -68,12 +65,13 @@ const ProductPage = () => {
         ));
     }, []);
 
+
     return (
         <Fragment>
 
             <div
                 className="flex justify-end h-20 bg-blue-600 text-white items-center px-10">
-                {email}
+                {username}
                 <Button
                     classname="bg-black ml-5"
                     onClick={handleLogout}>
@@ -86,7 +84,7 @@ const ProductPage = () => {
                     className="w-4/6 flex flex-wrap">
                     {products.length > 0 && products.map((product) => (
                         <CardProduct key={product.id}>
-                            <CardProduct.Header img={product.image} />
+                            <CardProduct.Header img={product.image} id={product.id} />
 
                             <CardProduct.Body title={product.title}>
                                 {product.description}

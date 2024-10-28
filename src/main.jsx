@@ -7,6 +7,8 @@ import LoginPage from "./Pages/login";
 import RegisterPage from "./Pages/register";
 import ErrorPage from "./Pages/404";
 import ProductPage from "./Pages/products";
+import ProfilePage from "./Pages/profile";
+import DetailProductPage from "./Pages/detailProduct";
 
 const router = createBrowserRouter([
   {
@@ -23,10 +25,20 @@ const router = createBrowserRouter([
     path: "/register",
     element: <RegisterPage />,
   },
+
   {
     path: "/products",
     element: <ProductPage />,
-  }
+  },
+  {
+    path: "/product/:id",
+    element: <DetailProductPage />,
+  },
+
+  {
+    path: "/profile",
+    element: <ProfilePage />,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(

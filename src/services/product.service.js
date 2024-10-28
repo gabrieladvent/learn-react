@@ -1,16 +1,24 @@
 import axios from "axios";
 
-const getProducts = async (callback) => {
-  const response = await axios
-    .get("https://fakestoreapi.com/products")
-    .then((response) => {
-        // console.log(response.data);
-        callback(response.data);
-        // return response.data;
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+export const getProducts = async (callback) => {
+    await axios
+        .get("https://fakestoreapi.com/products")
+        .then((response) => {
+            callback(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 };
 
-export default getProducts;
+export const getProduct = async (id, callback) => {
+    await axios
+        .get(`https://fakestoreapi.com/products/${id}`) 
+        .then((response) => {
+
+            callback(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+};

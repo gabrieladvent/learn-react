@@ -1,11 +1,12 @@
 import Button from "../Elements/Buton";
 import handleAddToCart from "../Fragments/CardProducts";
+import { Link } from "react-router-dom";
 
 
 const CardProduct = (props) => {
 
     const {
-        children
+        children,
     } = props;
 
     return (
@@ -16,16 +17,16 @@ const CardProduct = (props) => {
 }
 
 const HeaderCard = (props) => {
-    const { img } = props;
+    const { img, id } = props;
 
     return (
-        <a href="">
+        <Link to={`/product/${id}`}>
             <img 
                 src={img} 
                 alt="shoes-sneakers" 
                 className="p-8 rounded-t-lg h-60 w-full object-cover object-center" 
             />
-        </a>
+        </Link>
     )
 }
 
