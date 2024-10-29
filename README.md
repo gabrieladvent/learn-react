@@ -21,11 +21,11 @@ disclaimer: this is a repository of 'plek ketiplek' results so don't expect me t
  - useEffects ✅ 
  - useRef ✅
  - Get Data API ✅
- - Post Data API -
- - Custom Hooks -
- - Dynamic Routing
- - Redux - State Management
- - Redux Toolkit
- - Implementation React Redux
+ - Post Data API ✅
+ - Custom Hooks ✅
+ - Dynamic Routing ✅ 
+ - Redux - State Management ✅
+ - Redux Toolkit ✅
+ - Implementation React Redux ✅
  - useContext
  - useReducer

@@ -1,6 +1,8 @@
 import Button from "../Elements/Buton";
 import handleAddToCart from "../Fragments/CardProducts";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/actions/cartSlice";
 
 
 const CardProduct = (props) => {
@@ -48,7 +50,8 @@ const BodyCard = (props) => {
 }
 
 const FooterCard = (props) => {
-    const { price, handleAddToCart, id } = props;
+    const { price, id } = props;
+    const dispatch = useDispatch();
 
     return (
         <div className="flex items-center justify-between px-5 pb-5">
@@ -60,7 +63,9 @@ const FooterCard = (props) => {
             
             <Button 
                 classname="bg-blue-600"
-                onClick={() => handleAddToCart(id)}>
+                onClick={() => dispatch(addToCart(
+                        { id, qty: 1 }
+                    ))}>
                     Add To Card
             </Button>
         </div>
