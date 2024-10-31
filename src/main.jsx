@@ -13,6 +13,7 @@ import ProductPage from "./Pages/products";
 import ProfilePage from "./Pages/profile";
 import DetailProductPage from "./Pages/detailProduct";
 import Navbar from "./components/Layouts/Navbar";
+import DarkModeContextProvide from "./context/DarkMode";
 
 const router = createBrowserRouter([
   {
@@ -48,8 +49,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
-      <Navbar/>
-      <RouterProvider router={router}/>
+      <DarkModeContextProvide>
+        <RouterProvider router={router}/>
+      </DarkModeContextProvide>
     </Provider>
   </StrictMode>
 );
