@@ -27,5 +27,5 @@ disclaimer: this is a repository of 'plek ketiplek' results so don't expect me t
  - Redux - State Management ✅
  - Redux Toolkit ✅
  - Implementation React Redux ✅
- - useContext
+ - useContext ✅
  - useReducer
