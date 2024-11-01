@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 const DarkModeContext = createContext();
 const DarkModeProvider = ( { children }) => {
-    const [isDarkMode, setIsDarkMode] = useState(true);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     // {console.log(isDarkMode); }
 

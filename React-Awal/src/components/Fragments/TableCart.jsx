@@ -1,22 +1,28 @@
 import { useState, useRef, useEffect, useContext } from "react";
 import { useSelector } from "react-redux";
 import { DarkMode } from "../../context/DarkMode";
+import { useTotalPrice, useTotalPriceDispatch } from "../../context/TotalPriceContext";
 
 const TableCart = (props) => {
     const { products } = props;
     const totalPriceRef = useRef(null);
     const cart = useSelector((state) => state.cart.data);
-    const [totalPrice, setTotalPrice] = useState(0);
     const { isDarkMode } = useContext(DarkMode);
+    const dispatch = useTotalPriceDispatch();
+    const { total } = useTotalPrice();
 
     useEffect(() => {
         if (products.length > 0 && cart.length > 0) {
-            setTotalPrice(
+            const sum = 
                 cart.reduce((acc, item) =>
                     acc + item.qty * products.find((product) => product.id === item.id).price,
                     0
-                )
-            );
+                );
+            
+            dispatch({ 
+                type: "UPDATE", 
+                payload: { total: sum } 
+            });
 
             localStorage.setItem("cart", JSON.stringify(cart));
         }
@@ -28,7 +34,7 @@ const TableCart = (props) => {
         } else {
             totalPriceRef.current.style.display = "none";
         }
-    }, [totalPrice, cart]);
+    }, [total, cart]);
 
     return (
         <table className={` text-left table-auto border-separate border-spacing-x-2 ${isDarkMode ? "text-white" : "text-black"}`}>
@@ -51,8 +57,6 @@ const TableCart = (props) => {
                                     {
                                         style: 'currency',
                                         currency: 'USD',
-                                        minimumFractionDigits: 0,
-                                        maximumFractionDigits: 0
                                     })}
                             </td>
 
@@ -62,8 +66,6 @@ const TableCart = (props) => {
                                     {
                                         style: 'currency',
                                         currency: 'USD',
-                                        minimumFractionDigits: 0,
-                                        maximumFractionDigits: 0
                                     })}
                             </td>
                         </tr>
@@ -76,12 +78,10 @@ const TableCart = (props) => {
                     </td>
                     <td>
                         <b>
-                            {(totalPrice).toLocaleString('en-US',
+                            {(total).toLocaleString('en-US',
                                 {
                                     style: 'currency',
                                     currency: 'USD',
-                                    minimumFractionDigits: 0,
-                                    maximumFractionDigits: 0
                                 }
                             )}
                         </b>
