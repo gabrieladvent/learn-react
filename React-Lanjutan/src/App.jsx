@@ -1,29 +1,42 @@
-import { useId } from 'react'
+import { memo, useState } from "react"
 
-function Input (props) {
-  const { id = "input" } = props;
-  const inputId = useId();
-
+const TodoList = memo((props) => {
+  const { todos } = props;
+  console.log('call todo list');
 
   return (
     <>
-      <label htmlFor="">
-        <span htmlFor={ inputId }> { id } </span>
-        <input type="text" name="" id={ `${ inputId }-${ id }` } />
-      </label>
-      <p aria-details={ `${ inputId }-${ id }` }> 
-        Name should contain at least one character
-      </p>
+      <h2>My Todos</h2>
+      {todos.map((todo, index) => {
+        return (
+          <div key={index}>
+            <p>{todo}</p>
+          </div>
+        )
+      })}
     </>
   );
-}
+})
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState(['sleep', 'pause']);
+
+  const incraments = () => {
+    setCount((count) => count + 1);
+  };
+
+  const addTodo = (newTodo) => {
+    setTodos((todos) => [...todos, newTodo])
+  };
+
   return (
     <>
-      <Input id="firstName" />
-      <Input />
-      <Input />
+      <TodoList todos={todos} />
+      <button onClick={() => addTodo('wake up')}>Add Todo</button>
+
+      <p>Count: {count}</p>
+      <button onClick={incraments}>Increment</button>
     </>
   )
 }
