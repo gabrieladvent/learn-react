@@ -34,3 +34,4 @@ disclaimer: this is a repository of 'plek ketiplek' results so don't expect me t
     - useID ✅
     - Memo ✅
     - useMemo ✅
+    - useCallback ✅

@@ -1,9 +1,9 @@
-import ExampleUseMemo from "./components/ExampleUseMemo"
+import ExampleUseCallback from "./components/ExampleUseCallback"
 
 function App() {
   return (
     <>
-      <ExampleUseMemo></ExampleUseMemo>
+      <ExampleUseCallback></ExampleUseCallback>
     </>
   )
 }
