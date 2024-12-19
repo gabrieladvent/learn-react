@@ -33,4 +33,4 @@ disclaimer: this is a repository of 'plek ketiplek' results so don't expect me t
 ## Playlist React Lanjutan
     - useID ✅
     - Memo ✅
-    - useMemo
+    - useMemo ✅
